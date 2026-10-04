@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Keep Her in School</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Keep Her in School</h1>
+  <p>Pads, savings and health tools for girls. Data stays on this phone.</p>
+</header>
+
+<main>
+<!-- PADS -->
+<section id="pads" class="tab">
+  <div class="card hero" id="hero" aria-live="polite">
+    <div class="big" id="days">0</div>
+    <div class="unit">days of pads left</div>
+    <div class="msg" id="msg"></div>
+    <div class="bar"><div class="fill" id="fill"></div><div class="mark" id="mark"></div></div>
+    <div class="legend"><span>0</span><span id="mlabel"></span></div>
+  </div>
+  <div class="card">
+    <h2>Update stock</h2>
+    <div class="row"><div><label for="give">Pads given out</label><input id="give" type="number" min="1" inputmode="numeric"></div><button id="giveBtn">Give out</button></div>
+    <div class="row"><div><label for="add">New pads received</label><input id="add" type="number" min="1" inputmode="numeric"></div><button id="addBtn" class="alt">Add stock</button></div>
+    <div class="stats">
+      <div><b id="stock">0</b><span>in stock</span></div>
+      <div><b id="out">0</b><span>given out so far</span></div>
+      <div><b id="rop">0</b><span>order when stock hits</span></div>
+      <div><b id="qty">0</b><span>pads to order (<span id="packs">0</span> packs)</span></div>
+    </div>
+    <p class="muted" id="cost"></p>
+    <button class="alt" id="copy">Copy message for head teacher</button>
+  </div>
+  <div class="card">
+    <h2>School numbers</h2>
+    <div class="grid">
+      <div><label for="girls">Girls using pads</label><input id="girls" type="number" min="1" inputmode="numeric"></div>
+      <div><label for="per">Pads per girl a month</label><input id="per" type="number" min="1" inputmode="numeric"></div>
+      <div><label for="lead">Days for delivery</label><input id="lead" type="number" min="0" inputmode="numeric"></div>
+      <div><label for="safe">Safety days</label><input id="safe" type="number" min="0" inputmode="numeric"></div>
+      <div><label for="psize">Pads in a pack</label><input id="psize" type="number" min="1" inputmode="numeric"></div>
+      <div><label for="pcost">Price of a pack (₦)</label><input id="pcost" type="number" min="0" inputmode="numeric"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SAVINGS -->
+<section id="club" class="tab" hidden>
+  <div class="card">
+    <h2>Girls' savings club</h2>
+    <div class="grid">
+      <div><label for="cname">Club name</label><input id="cname" placeholder="e.g. SS2 Savers"></div>
+      <div><label for="weekly">Weekly amount (₦)</label><input id="weekly" type="number" min="0" inputmode="numeric"></div>
+      <div class="full"><label for="goal">Group goal (₦)</label><input id="goal" type="number" min="0" inputmode="numeric"></div>
+    </div>
+    <div class="bar"><div class="fill" id="cfill"></div></div>
+    <p class="muted" id="csum"></p>
+  </div>
+  <div class="card">
+    <h2>Members</h2>
+    <div class="row"><div><label for="newgirl">First name or nickname only</label><input id="newgirl"></div><button id="addGirl">Add</button></div>
+    <ul id="members"></ul>
+    <p class="muted" id="cempty">No members yet.</p>
+  </div>
+</section>
+
+<!-- HEALTH -->
+<section id="health" class="tab" hidden>
+  <div class="card">
+    <h2>Cycle calendar</h2>
+    <div class="grid">
+      <div><label for="last">First day of last period</label><input id="last" type="date"></div>
+      <div><label for="len">Days between periods</label><input id="len" type="number" min="20" max="45" inputmode="numeric"></div>
+    </div>
+    <p class="msg2" id="next">Enter a date to see your next expected period.</p>
+    <p class="muted">This is only an estimate. Cycles can change, especially in the first years.</p>
+  </div>
+  <div class="card">
+    <h2>Good to know</h2>
+    <ul class="tips">
+      <li>Change a pad every 4 to 6 hours, or sooner if it is full.</li>
+      <li>Wash hands before and after changing. Wrap used pads and put them in a bin.</li>
+      <li>Periods are normal. No girl should miss school or feel shame because of one.</li>
+      <li>Cycles often last 21 to 35 days and may be irregular at first.</li>
+      <li>Talk to a nurse, doctor or trusted adult if bleeding is very heavy, pain is severe, or periods stop for 3 months or more.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<nav>
+  <button data-tab="pads" class="on">Pads</button>
+  <button data-tab="club">Savings</button>
+  <button data-tab="health">Health</button>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>
